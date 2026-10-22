@@ -1,0 +1,13 @@
+version: "2"
+
+linters:
+  settings:
+    staticcheck:
+      # ginkgo and gomega are designed to be dot-imported.
+      dot-import-whitelist:
+        - github.com/onsi/ginkgo/v2
+        - github.com/onsi/gomega
+  exclusions:
+    presets:
+      # Don't require checking errors from Close and similar calls, as in v1.
+      - std-error-handling
